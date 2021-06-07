@@ -1,4 +1,4 @@
-#include "FactoryMethod.h"
+#include "SimpleFactory.h"
 
 Pizza* SimplePizzaFactory::creatPizza(PizzaType type)
 {

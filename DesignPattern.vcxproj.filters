@@ -7,21 +7,30 @@
     <Filter Include="Other">
       <UniqueIdentifier>{fe839017-3f6f-40cc-b4ea-bf116435db02}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SimpleFactory">
+      <UniqueIdentifier>{d422b154-e461-4f5c-8f0a-a0ebaff4a37e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="FactoryMethod.cpp">
-      <Filter>FactoryMethod</Filter>
-    </ClCompile>
     <ClCompile Include="UserInfo.cpp">
       <Filter>Other</Filter>
     </ClCompile>
+    <ClCompile Include="FactoryMethod.cpp">
+      <Filter>FactoryMethod</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleFactory.cpp">
+      <Filter>SimpleFactory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="UserInfo.h">
+      <Filter>Other</Filter>
+    </ClInclude>
     <ClInclude Include="FactoryMethod.h">
       <Filter>FactoryMethod</Filter>
     </ClInclude>
-    <ClInclude Include="UserInfo.h">
-      <Filter>Other</Filter>
+    <ClInclude Include="SimpleFactory.h">
+      <Filter>SimpleFactory</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
