@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="FactoryMethod">
+      <UniqueIdentifier>{d0c4db2e-5d9e-4e26-92b9-891ca74c7189}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Other">
+      <UniqueIdentifier>{fe839017-3f6f-40cc-b4ea-bf116435db02}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FactoryMethod.cpp">
+      <Filter>FactoryMethod</Filter>
+    </ClCompile>
+    <ClCompile Include="UserInfo.cpp">
+      <Filter>Other</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FactoryMethod.h">
+      <Filter>FactoryMethod</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInfo.h">
+      <Filter>Other</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
