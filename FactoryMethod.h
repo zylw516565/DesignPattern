@@ -207,17 +207,18 @@ protected:
     StoreType storeType;
 };
 
-class NYStylePizzaStore
+class NYStylePizzaStore : public PizzaStore
 {
 public:
-    NYStylePizzaStore(NY_STYLE)::PizzaStore() {};
+    NYStylePizzaStore():PizzaStore(NY_STYLE) {};
 
     Pizza* creatPizza(PizzaType type);
 };
 
-class ChicagoStylePizzaStore
+class ChicagoStylePizzaStore : public PizzaStore
 {
 public:
+    ChicagoStylePizzaStore() :PizzaStore(CHICAGO_STYLE) {};
     Pizza* creatPizza(PizzaType type);
 
 

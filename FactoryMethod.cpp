@@ -82,8 +82,8 @@ Pizza* ChicagoStylePizzaStore::creatPizza(PizzaType type)
 
 void FactoryMethodTest()
 {
-
-    NYStylePizzaStore.orderPizza();
+    NYStylePizzaStore objStore;
+    objStore.orderPizza(CHEESE);
 
 
 }
