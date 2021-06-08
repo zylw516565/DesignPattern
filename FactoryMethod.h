@@ -36,41 +36,41 @@ public:
     virtual void box() = 0;
 };
 
-class CheesePizza : public Pizza
-{
-public:
-    void prepare() { cout << "CheesePizza::prepare" << endl;}
-
-    void bake() { cout << "CheesePizza::bake" << endl; }
-
-    void cut() { cout << "CheesePizza::cut" << endl; }
-
-    void box() { cout << "CheesePizza::box" << endl; }
-};
-
-class PepperoniPizza : public Pizza
-{
-public:
-    void prepare() { cout << "PepperoniPizza::prepare" << endl; }
-
-    void bake() { cout << "PepperoniPizza::bake" << endl; }
-
-    void cut() { cout << "PepperoniPizza::cut" << endl; }
-
-    void box() { cout << "PepperoniPizza::box" << endl; }
-};
-
-class ClamPizza : public Pizza
-{
-public:
-    void prepare() { cout << "ClamPizza::prepare" << endl; }
-
-    void bake() { cout << "ClamPizza::bake" << endl; }
-
-    void cut() { cout << "ClamPizza::cut" << endl; }
-
-    void box() { cout << "ClamPizza::box" << endl; }
-};
+// class CheesePizza : public Pizza
+// {
+// public:
+//     void prepare() { cout << "CheesePizza::prepare" << endl;}
+// 
+//     void bake() { cout << "CheesePizza::bake" << endl; }
+// 
+//     void cut() { cout << "CheesePizza::cut" << endl; }
+// 
+//     void box() { cout << "CheesePizza::box" << endl; }
+// };
+// 
+// class PepperoniPizza : public Pizza
+// {
+// public:
+//     void prepare() { cout << "PepperoniPizza::prepare" << endl; }
+// 
+//     void bake() { cout << "PepperoniPizza::bake" << endl; }
+// 
+//     void cut() { cout << "PepperoniPizza::cut" << endl; }
+// 
+//     void box() { cout << "PepperoniPizza::box" << endl; }
+// };
+// 
+// class ClamPizza : public Pizza
+// {
+// public:
+//     void prepare() { cout << "ClamPizza::prepare" << endl; }
+// 
+//     void bake() { cout << "ClamPizza::bake" << endl; }
+// 
+//     void cut() { cout << "ClamPizza::cut" << endl; }
+// 
+//     void box() { cout << "ClamPizza::box" << endl; }
+// };
 
 class VeggiePizza : public Pizza
 {
@@ -184,14 +184,6 @@ public:
 };
 
 
-class SimplePizzaFactory
-{
-public:
-    static Pizza* creatPizza(PizzaType type);
-
-};
-
-
 class PizzaStore
 {
 public:
@@ -199,7 +191,18 @@ public:
         :storeType(Type){};
     ~PizzaStore() {};
 
-    Pizza* orderPizza(PizzaType type);
+    Pizza* orderPizza(PizzaType type)
+    {
+        Pizza* pizza = nullptr;
+        pizza = creatPizza(type);
+
+        pizza->prepare();
+        pizza->bake();
+        pizza->cut();
+        pizza->box();
+
+        return pizza;
+    }
 
     virtual Pizza* creatPizza(PizzaType type) = 0;
 
