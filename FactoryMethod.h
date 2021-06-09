@@ -2,11 +2,14 @@
 
 #include <string>
 #include <iostream>
+#include <vector>
+
 
 using std::string;
 
 using std::cout;
 using std::endl;
+using std::vector;
 
 enum PizzaType{
     CHEESE = 0,
@@ -26,14 +29,46 @@ enum StoreType {
 class Pizza
 {
 public:
-    Pizza() {};
-    virtual ~Pizza() {};
+    Pizza() = default;
+    virtual ~Pizza() = default;
 
 public:
-    virtual void prepare() = 0;
-    virtual void bake() = 0;
-    virtual void cut() = 0;
-    virtual void box() = 0;
+    virtual void prepare()
+    {
+        cout << "Preparing " + name_ << endl;
+        cout << "Tossing  dough..." << endl;
+        cout << "Adding  sauce..." << endl;
+        cout << "Adding  toppings: " << endl;
+        for (auto topping : toppings_)
+        {
+            cout << "  " << topping;
+        }
+
+        cout << endl;
+    }
+    virtual void bake()
+    {
+    }
+
+    virtual void cut() 
+    {
+    }
+
+    virtual void box()
+    {
+    }
+
+    string getName() const
+    {
+        return name_;
+    }
+
+private:
+    string  name_;   //披萨名称
+    string  dough_;  //面团类型
+    string  sauce_;  //酱料类型
+
+    vector<string> toppings_;
 };
 
 // class CheesePizza : public Pizza
@@ -71,18 +106,18 @@ public:
 // 
 //     void box() { cout << "ClamPizza::box" << endl; }
 // };
-
-class VeggiePizza : public Pizza
-{
-public:
-    void prepare() { cout << "VeggiePizza::prepare" << endl; }
-
-    void bake() { cout << "VeggiePizza::bake" << endl; }
-
-    void cut() { cout << "VeggiePizza::cut" << endl; }
-
-    void box() { cout << "VeggiePizza::box" << endl; }
-};
+// 
+// class VeggiePizza : public Pizza
+// {
+// public:
+//     void prepare() { cout << "VeggiePizza::prepare" << endl; }
+// 
+//     void bake() { cout << "VeggiePizza::bake" << endl; }
+// 
+//     void cut() { cout << "VeggiePizza::cut" << endl; }
+// 
+//     void box() { cout << "VeggiePizza::box" << endl; }
+// };
 
 //*******************
 class NYStyleCheesePizza : public Pizza
