@@ -140,24 +140,21 @@ private:
 };
 
 
-int main()
-{
-    cout << "Hello World !!!" << endl;
-    std::shared_ptr<IUserInfo> userInfo(new UserInfo());
-
-    IUserBO*  userBO = dynamic_cast<IUserBO*>(userInfo.get());
-    userBO->setPassWord("abc");
-
-    std::shared_ptr<IUserBO> userBO_V2(new IUserBO());
-    userBO_V2->setPassWord("iii");
-
-    IUserBiz*  userBiz = dynamic_cast<IUserBiz*>(userInfo.get());
-    userBiz->changePassWord();
-
-    std::shared_ptr<IUserBiz> userBiz_V2(new IUserBiz());
-    userBiz_V2->changePassWord();
-
-
-
-
-}
+// int main()
+// {
+//     cout << "Hello World !!!" << endl;
+//     std::shared_ptr<IUserInfo> userInfo(new UserInfo());
+// 
+//     IUserBO*  userBO = dynamic_cast<IUserBO*>(userInfo.get());
+//     userBO->setPassWord("abc");
+// 
+//     std::shared_ptr<IUserBO> userBO_V2(new IUserBO());
+//     userBO_V2->setPassWord("iii");
+// 
+//     IUserBiz*  userBiz = dynamic_cast<IUserBiz*>(userInfo.get());
+//     userBiz->changePassWord();
+// 
+//     std::shared_ptr<IUserBiz> userBiz_V2(new IUserBiz());
+//     userBiz_V2->changePassWord();
+// 
+// }

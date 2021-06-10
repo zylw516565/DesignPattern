@@ -46,16 +46,20 @@ public:
 
         cout << endl;
     }
+
     virtual void bake()
     {
+        cout << "Bake for 25 minutes at 350" << endl;
     }
 
     virtual void cut() 
     {
+        cout << "Cutting the pizza into diagonal slices" << endl;
     }
 
     virtual void box()
     {
+        cout << "Place pizza in official PizzaStore box" << endl;
     }
 
     string getName() const
@@ -63,7 +67,7 @@ public:
         return name_;
     }
 
-private:
+protected:
     string  name_;   //披萨名称
     string  dough_;  //面团类型
     string  sauce_;  //酱料类型
@@ -123,13 +127,23 @@ private:
 class NYStyleCheesePizza : public Pizza
 {
 public:
-    void prepare() { cout << "NYStyleCheesePizza::prepare" << endl; }
 
-    void bake() { cout << "NYStyleCheesePizza::bake" << endl; }
+    NYStyleCheesePizza()
+    {
+        name_ = "NY Style Sauce and Cheese Pizza";
+        dough_ = "Thin Crust Dough";
+        sauce_ = "Marinara Sauce";
 
-    void cut() { cout << "NYStyleCheesePizza::cut" << endl; }
+        toppings_.push_back("Grated Reggiano Cheese");
+    }
 
-    void box() { cout << "NYStyleCheesePizza::box" << endl; }
+//     void prepare() { cout << "NYStyleCheesePizza::prepare" << endl; }
+// 
+//     void bake() { cout << "NYStyleCheesePizza::bake" << endl; }
+// 
+//     void cut() { cout << "NYStyleCheesePizza::cut" << endl; }
+// 
+//     void box() { cout << "NYStyleCheesePizza::box" << endl; }
 };
 
 class NYStylePepperoniPizza : public Pizza
@@ -173,13 +187,23 @@ public:
 class ChicagoStyleCheesePizza : public Pizza
 {
 public:
-    void prepare() { cout << "ChicagoStyleCheesePizza::prepare" << endl; }
 
-    void bake() { cout << "ChicagoStyleCheesePizza::bake" << endl; }
+    ChicagoStyleCheesePizza()
+    {
+        name_ = "Chicago Style Sauce and Cheese Pizza";
+        dough_ = "Chicago Crust Dough";
+        sauce_ = "Chicago Sauce";
+
+        toppings_.push_back("Grated Chicago Cheese");
+    }
+
+//     void prepare() { cout << "ChicagoStyleCheesePizza::prepare" << endl; }
+// 
+//     void bake() { cout << "ChicagoStyleCheesePizza::bake" << endl; }
 
     void cut() { cout << "ChicagoStyleCheesePizza::cut" << endl; }
 
-    void box() { cout << "ChicagoStyleCheesePizza::box" << endl; }
+//    void box() { cout << "ChicagoStyleCheesePizza::box" << endl; }
 };
 
 class ChicagoStylePepperoniPizza : public Pizza
@@ -257,6 +281,7 @@ class ChicagoStylePizzaStore : public PizzaStore
 {
 public:
     ChicagoStylePizzaStore() :PizzaStore(CHICAGO_STYLE) {};
+
     Pizza* creatPizza(PizzaType type);
 
 

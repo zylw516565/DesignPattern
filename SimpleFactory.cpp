@@ -1,11 +1,13 @@
 #include "SimpleFactory.h"
 
-Pizza* SimplePizzaFactory::creatPizza(PizzaType type)
-{
-    Pizza* pizza = nullptr;
+namespace SimpleFactory {
 
-    switch (type) 
+    Pizza* SimplePizzaFactory::creatPizza(PizzaType type)
     {
+        Pizza* pizza = nullptr;
+
+        switch (type)
+        {
         case CHEESE:
             pizza = new CheesePizza();
         case PEPPERONI:
@@ -16,22 +18,24 @@ Pizza* SimplePizzaFactory::creatPizza(PizzaType type)
             pizza = new VeggiePizza();
         default:
             pizza = nullptr;
+        }
+
+        return pizza;
     }
 
-    return pizza;
-}
 
 
+    Pizza* PizzaStore::orderPizza(PizzaType type)
+    {
+        Pizza* pizza = nullptr;
+        pizza = SimplePizzaFactory::creatPizza(type);
 
-Pizza* PizzaStore::orderPizza(PizzaType type)
-{
-    Pizza* pizza = nullptr;
-    pizza = SimplePizzaFactory::creatPizza(type);
+        pizza->prepare();
+        pizza->bake();
+        pizza->cut();
+        pizza->box();
 
-    pizza->prepare();
-    pizza->bake();
-    pizza->cut();
-    pizza->box();
+        return pizza;
+    }
 
-    return pizza;
 }
