@@ -92,12 +92,5 @@ int main()
 {
     //AbstractFactory::FactoryMethodTest();
 
-
-    Test* pTest = new Test();
-    if (pTest == NULL)
-        return -1;
-
-    pTest->printPtr();
-
     getchar();
 }
