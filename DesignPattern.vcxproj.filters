@@ -10,6 +10,9 @@
     <Filter Include="SimpleFactory">
       <UniqueIdentifier>{d422b154-e461-4f5c-8f0a-a0ebaff4a37e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="AbstractFactory">
+      <UniqueIdentifier>{b39c06d3-7f44-46af-ad77-5a5aa91d5d2a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="UserInfo.cpp">
@@ -21,6 +24,9 @@
     <ClCompile Include="SimpleFactory.cpp">
       <Filter>SimpleFactory</Filter>
     </ClCompile>
+    <ClCompile Include="AbstractFactory.cpp">
+      <Filter>AbstractFactory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UserInfo.h">
@@ -31,6 +37,9 @@
     </ClInclude>
     <ClInclude Include="SimpleFactory.h">
       <Filter>SimpleFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractFactory.h">
+      <Filter>AbstractFactory</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

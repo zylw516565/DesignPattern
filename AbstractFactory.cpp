@@ -1,7 +1,7 @@
-#include "FactoryMethod.h"
+#include "AbstractFactory.h"
 
 
-namespace FactoryMethod
+namespace AbstractFactory
 {
 
     Pizza* NYStylePizzaStore::creatPizza(PizzaType type)
@@ -73,9 +73,31 @@ namespace FactoryMethod
 
 }
 
-// int main()
-// {
-//     FactoryMethod::FactoryMethodTest();
-// 
-//     getchar();
-// }
+class Member
+{};
+
+class Test
+{
+public:
+    void printPtr()
+    {
+        printf("m_pMember = %p\n", m_pMember);
+    }
+
+private:
+    Member*  m_pMember;
+};
+
+int main()
+{
+    //AbstractFactory::FactoryMethodTest();
+
+
+    Test* pTest = new Test();
+    if (pTest == NULL)
+        return -1;
+
+    pTest->printPtr();
+
+    getchar();
+}

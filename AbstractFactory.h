@@ -10,8 +10,9 @@ using std::string;
 using std::cout;
 using std::endl;
 using std::vector;
+using std::shared_ptr;
 
-namespace FactoryMethod
+namespace AbstractFactory
 {
 
     enum PizzaType {
@@ -241,5 +242,136 @@ namespace FactoryMethod
 
 
     };
+
+    class Dough {};
+
+    class Sauce {};
+
+    class Cheese {};
+
+    class Pepperoni {};
+
+    class Clam {};
+
+    class Veggie {};
+
+    class PizzaIngredientFactory
+    {
+    public:
+        virtual ~PizzaIngredientFactory() = default;
+
+        virtual shared_ptr<Dough> creatDough() = 0;
+        virtual shared_ptr<Sauce> creatSauce() = 0;
+        virtual shared_ptr<Cheese> creatCheese() = 0;
+        virtual shared_ptr<std::vector<Veggie>> creatVeggies() = 0;
+        virtual shared_ptr<Pepperoni> creatPepperoni() = 0;
+        virtual shared_ptr<Clam> creatClam() = 0;
+    };
+
+
+    class ThinCrustDough : public Dough
+    {};
+
+    class MarinaraSauce : public Sauce
+    {};
+
+    class ReggianoCheese : public Cheese
+    {};
+
+    class SlicedPepperoni : public Pepperoni
+    {};
+
+    class FreshClam : public Clam
+    {};
+
+
+    class NYPizzaIngredientFactory : public PizzaIngredientFactory
+    {
+
+        shared_ptr<Dough> creatDough()
+        {
+            shared_ptr<Dough> tmp(new ThinCrustDough());
+            return tmp;
+        }
+        shared_ptr<Sauce> creatSauce()
+        {
+            shared_ptr<Sauce> tmp(new MarinaraSauce());
+            return tmp;
+        }
+        shared_ptr<Cheese> creatCheese()
+        {
+            shared_ptr<Cheese> tmp(new ReggianoCheese());
+            return tmp;
+        }
+        shared_ptr<std::vector<Veggie>> creatVeggies()
+        {
+            shared_ptr<std::vector<Veggie>> tmp(new std::vector<Veggie>(2));
+            return tmp;
+        }
+        shared_ptr<Pepperoni> creatPepperoni()
+        {
+            shared_ptr<Pepperoni> tmp(new SlicedPepperoni());
+            return tmp;
+        }
+        shared_ptr<Clam> creatClam()
+        {
+            shared_ptr<Clam> tmp(new FreshClam());
+            return tmp;
+        }
+
+    };
+
+
+    class ThickCrustDough : public Dough
+    {};
+
+    class PlumTomatoSauce : public Sauce
+    {};
+
+//     class ReggianoCheese : public Cheese
+//     {};
+
+//     class SlicedPepperoni : public Pepperoni
+//     {};
+
+    class FrozenClam : public Clam
+    {};
+
+    class ChicagoPizzaIngredientFactory : public PizzaIngredientFactory
+    {
+
+        shared_ptr<Dough> creatDough()
+        {
+            shared_ptr<Dough> tmp(new ThickCrustDough());
+            return tmp;
+        }
+        shared_ptr<Sauce> creatSauce()
+        {
+            shared_ptr<Sauce> tmp(new PlumTomatoSauce());
+            return tmp;
+        }
+        shared_ptr<Cheese> creatCheese()
+        {
+            shared_ptr<Cheese> tmp(new ReggianoCheese());
+            return tmp;
+        }
+        shared_ptr<std::vector<Veggie>> creatVeggies()
+        {
+            shared_ptr<std::vector<Veggie>> tmp(new std::vector<Veggie>(2));
+            return tmp;
+        }
+        shared_ptr<Pepperoni> creatPepperoni()
+        {
+            shared_ptr<Pepperoni> tmp(new SlicedPepperoni());
+            return tmp;
+        }
+        shared_ptr<Clam> creatClam()
+        {
+            shared_ptr<Clam> tmp(new FreshClam());
+            return tmp;
+        }
+
+    };
+
 
 }
