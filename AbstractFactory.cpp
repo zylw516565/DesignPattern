@@ -4,21 +4,17 @@
 namespace AbstractFactory
 {
 
-
-
-
-
-    void FactoryMethodTest()
+    void AbstractFactoryTest()
     {
-//         NYStylePizzaStore objNYStore;
-//         ChicagoStylePizzaStore objChicagoStore;
-// 
-// 
-//         Pizza* pizza = objNYStore.orderPizza(CHEESE);
-//         cout << "Ethan order a " + pizza->getName() << endl;
-// 
-//         pizza = objChicagoStore.orderPizza(CHEESE);
-//         cout << "Joe order a " + pizza->getName() << endl;
+        NYPizzaStore objNYStore;
+        ChicagoPizzaStore objChicagoStore;
+
+
+        Pizza* pizza = objNYStore.orderPizza(CHEESE);
+        cout << "Ethan order a " + pizza->getName() << endl;
+
+        pizza = objChicagoStore.orderPizza(CHEESE);
+        cout << "Joe order a " + pizza->getName() << endl;
     }
 
 }
@@ -26,7 +22,7 @@ namespace AbstractFactory
 
 int main()
 {
-    //AbstractFactory::FactoryMethodTest();
+    AbstractFactory::AbstractFactoryTest();
 
     getchar();
 }

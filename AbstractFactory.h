@@ -92,27 +92,27 @@ namespace AbstractFactory
     class PizzaStore
     {
     public:
-        PizzaStore(StoreType Type)
-            :storeType(Type) {};
-        ~PizzaStore() {};
+        PizzaStore() = default;
+        ~PizzaStore() = default;
 
-//         Pizza* orderPizza(PizzaType type)
-//         {
-//             Pizza* pizza = nullptr;
-//             pizza = creatPizza(type);
-// 
-//             pizza->prepare();
-//             pizza->bake();
-//             pizza->cut();
-//             pizza->box();
-// 
-//             return pizza;
-//         }
+        Pizza* orderPizza(PizzaType type)
+        {
+            Pizza* pizza = nullptr;
+            pizza = creatPizza(type);
+
+
+            if (pizza == nullptr)
+                return pizza;
+
+            pizza->prepare();
+            pizza->cut();
+            pizza->box();
+
+            return pizza;
+        }
 
         virtual Pizza* creatPizza(PizzaType type) = 0;
 
-    protected:
-        StoreType storeType;
     };
 
     class PizzaIngredientFactory
@@ -226,8 +226,6 @@ namespace AbstractFactory
         }
 
     };
-
-
 
     class CheesePizza :public Pizza
     {
