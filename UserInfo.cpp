@@ -139,9 +139,162 @@ private:
     string  m_strPassWord;
 };
 
+class Animal
+{
+public:
+    virtual void makeSound() = 0;
+};
+
+class Dog :public Animal
+{
+public:
+    void makeSound() 
+    {
+        bark();
+    }
+
+    void bark() 
+    {
+        cout << "汪汪叫" << endl;
+    }
+};
+
+class Cat :public Animal
+{
+    void makeSound()
+    {
+        meow();
+    }
+
+    void meow()
+    {
+        cout << "喵喵叫" << endl;
+    }
+
+};
+
+class FlyBehavior
+{
+public:
+    virtual void fly() = 0;
+
+};
+
+class FlyWithRocket :public FlyBehavior
+{
+    void fly()
+    {
+        cout << "用火箭动力飞行" << endl;
+    }
+
+};
+
+class QuackBehavior
+{
+public:
+    virtual void quack() = 0;
+
+};
+
+class Quack :public  QuackBehavior
+{
+    void quack()
+    {
+        cout << "鸭子呱呱叫" << endl;
+    }
+};
+
+class Squeak :public  QuackBehavior
+{
+    void quack()
+    {
+        cout << "橡皮鸭子吱吱叫" << endl;
+    }
+};
+
+class MuteQuack :public  QuackBehavior
+{
+    void quack()
+    {
+        cout << "什么都不做, 不会叫" << endl;
+    }
+};
+
+
+
+class Duck
+{
+protected:
+    FlyBehavior*     m_fly;
+    QuackBehavior*   m_quack;
+
+public:
+
+    Duck(FlyBehavior* fly, QuackBehavior* quack)
+    :m_fly(fly)
+    ,m_quack(quack)
+    {}
+
+    virtual void swim() = 0;
+
+    virtual void display() = 0;
+
+    void performFly() 
+    {
+        m_fly->fly(); 
+    }
+
+    void performQuack() 
+    {
+        m_quack->quack();
+    }
+
+
+};
+
+class MallardDuck :public Duck
+{
+public:
+
+    MallardDuck()
+    :Duck::Duck(new FlyWithRocket(), new Quack())
+//     :m_fly(new FlyWithRocket())
+//     ,m_quack(new Quack())
+    {
+        m_fly = new FlyWithRocket();
+        m_quack = new Quack();
+    }
+
+    void swim()
+    {
+        cout  << "游泳" << endl;
+    }
+
+    void display()
+    {
+        cout << "外观是绿头" << endl;
+    }
+
+};
+
+
 
 // int main()
 // {
+//     //针对实现编程
+//     Dog* dog = new Dog();
+//     dog->bark();
+// 
+//     Animal* animal = new Dog();
+//     animal->makeSound();
+// 
+//     animal = new Cat();
+//     animal->makeSound();
+// 
+//     Duck* duck = new MallardDuck();
+//     duck->performFly();
+//     duck->performQuack();
+// 
 //     cout << "Hello World !!!" << endl;
 //     std::shared_ptr<IUserInfo> userInfo(new UserInfo());
 // 

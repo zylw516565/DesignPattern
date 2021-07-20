@@ -13,6 +13,12 @@
     <Filter Include="AbstractFactory">
       <UniqueIdentifier>{b39c06d3-7f44-46af-ad77-5a5aa91d5d2a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="StrategyPattern">
+      <UniqueIdentifier>{e76a0fc1-2f59-43a8-b975-ed76c6e29fbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Observer">
+      <UniqueIdentifier>{f21026c7-57f4-49e9-b62c-ddde0110dd64}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="UserInfo.cpp">
@@ -27,6 +33,12 @@
     <ClCompile Include="AbstractFactory.cpp">
       <Filter>AbstractFactory</Filter>
     </ClCompile>
+    <ClCompile Include="StrategyPattern.cpp">
+      <Filter>StrategyPattern</Filter>
+    </ClCompile>
+    <ClCompile Include="Observer.cpp">
+      <Filter>Observer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UserInfo.h">
@@ -40,6 +52,12 @@
     </ClInclude>
     <ClInclude Include="AbstractFactory.h">
       <Filter>AbstractFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="StrategyPattern.h">
+      <Filter>StrategyPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="Observer.h">
+      <Filter>Observer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

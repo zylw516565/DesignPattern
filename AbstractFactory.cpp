@@ -20,9 +20,9 @@ namespace AbstractFactory
 }
 
 
-int main()
-{
-    AbstractFactory::AbstractFactoryTest();
-
-    getchar();
-}
+// int main()
+// {
+//     AbstractFactory::AbstractFactoryTest();
+// 
+//     getchar();
+// }
