@@ -33,10 +33,10 @@ namespace ObserverPattern {
 
 }
 
-int main()
-{
-    ObserverPattern::testObserver();
-
-    getchar();
-    return 0;
-}
+//int main()
+//{
+//    ObserverPattern::testObserver();
+//
+//    getchar();
+//    return 0;
+//}

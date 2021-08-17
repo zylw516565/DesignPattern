@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AbstractFactory.cpp" />
+    <ClCompile Include="DecoratorPattern\DecoratorPattern.cpp" />
     <ClCompile Include="FactoryMethod.cpp" />
     <ClCompile Include="Observer.cpp" />
     <ClCompile Include="SimpleFactory.cpp" />
@@ -148,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractFactory.h" />
+    <ClInclude Include="DecoratorPattern\DecoratorPattern.h" />
     <ClInclude Include="FactoryMethod.h" />
     <ClInclude Include="Observer.h" />
     <ClInclude Include="SimpleFactory.h" />

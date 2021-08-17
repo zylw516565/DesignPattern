@@ -19,6 +19,9 @@
     <Filter Include="Observer">
       <UniqueIdentifier>{f21026c7-57f4-49e9-b62c-ddde0110dd64}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DecoratorPattern">
+      <UniqueIdentifier>{84f90cd2-69fd-4005-a4fd-b7e0731a465e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="UserInfo.cpp">
@@ -39,6 +42,9 @@
     <ClCompile Include="Observer.cpp">
       <Filter>Observer</Filter>
     </ClCompile>
+    <ClCompile Include="DecoratorPattern\DecoratorPattern.cpp">
+      <Filter>DecoratorPattern</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UserInfo.h">
@@ -58,6 +64,9 @@
     </ClInclude>
     <ClInclude Include="Observer.h">
       <Filter>Observer</Filter>
+    </ClInclude>
+    <ClInclude Include="DecoratorPattern\DecoratorPattern.h">
+      <Filter>DecoratorPattern</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
