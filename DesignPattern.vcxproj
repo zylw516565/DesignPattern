@@ -114,7 +114,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;WIN32;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -142,6 +142,7 @@
     <ClCompile Include="AbstractFactory.cpp" />
     <ClCompile Include="DecoratorPattern\DecoratorPattern.cpp" />
     <ClCompile Include="FactoryMethod.cpp" />
+    <ClCompile Include="ISO8601Helper\ISO8601HelperTest.cpp" />
     <ClCompile Include="Observer.cpp" />
     <ClCompile Include="SimpleFactory.cpp" />
     <ClCompile Include="StrategyPattern.cpp" />
@@ -151,6 +152,7 @@
     <ClInclude Include="AbstractFactory.h" />
     <ClInclude Include="DecoratorPattern\DecoratorPattern.h" />
     <ClInclude Include="FactoryMethod.h" />
+    <ClInclude Include="ISO8601Helper\ISO8601Helper.h" />
     <ClInclude Include="Observer.h" />
     <ClInclude Include="SimpleFactory.h" />
     <ClInclude Include="StrategyPattern.h" />
